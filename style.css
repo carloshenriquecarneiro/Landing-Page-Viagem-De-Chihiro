@@ -39,6 +39,8 @@ body {
 .banner .icones > img {
     margin-right: 30px;
     cursor: pointer;
+    transition: .3s;
+    transform: scale(0.9);
 }
 
 .banner .icones {
@@ -47,6 +49,11 @@ body {
     justify-content: center;
     -webkit-box-align: center;
     -webkit-box-pack: center;   
+}
+
+
+.icones img:hover {
+    transform: scale(0.9) translateY(-6px);
 }
 
 img {
@@ -62,6 +69,8 @@ img {
 
 
 /* Main */
+
+
 
 .container .sec-container h2 {
     color: white;
@@ -96,6 +105,15 @@ img {
     margin-top: 20px;
 }
 
+.container .sec-container .btn-assistir:hover {
+    background: #264549;
+}
+
+.container .sec-container .btn-trailer:hover {
+    background: linear-gradient(45deg,#658E76, #465e61);
+    border: 2px solid #264549;
+}
+
 .container .sec-container .btn-assistir {
     text-decoration: none;
     background: #658E76;
@@ -111,6 +129,7 @@ img {
     cursor: pointer;
     line-height: 30px;
     transform: skew(-15deg);
+    transition: .3s;
 }
 
 .container .sec-container .btn-assistir img {
@@ -131,6 +150,7 @@ img {
     cursor: pointer;
     line-height: 30px;
     -webkit-transform: skew(-15deg);
+    transition: .3s;
 }
 
 .container {
@@ -153,8 +173,17 @@ img {
     height: 370px;
     width: 400px;
     margin-right: 60px;
+    animation: is-boucing 2s ease-in-out alternate infinite;
 }
 
+
+
+
+@keyframes is-boucing {
+    to {
+        transform: translateY(20px);
+    }
+}
 
 
 
@@ -163,10 +192,9 @@ img {
     body {
         overflow-x: hidden;
         background: #28565C;
+        height: 100vh;
     }
 
-    
-    
     .btn-trailer {
         display: none;
     }
@@ -179,13 +207,13 @@ img {
     .icones {
         width: 15px;
         position: absolute;
-        right: 60px;
+        right: 120px;
         margin-top: 20px;
     }
 
 
-    .img-main {
-       display: none;
+    .img-main img {
+       max-width: 100%;
     }
 
     .container {
@@ -193,12 +221,12 @@ img {
         left: -120px;
         margin-top: 70px;
         flex-direction: column-reverse;
-
     }
 
     .container .sec-container h1 {
         font-size: 40px;
         line-height: 40px;
+        font-weight: 700;
     }
 
     .container .sec-container h2 {
